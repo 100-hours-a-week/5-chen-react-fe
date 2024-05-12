@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  border-bottom: 1px solid black;
+  font-family: 'SagacSagac', serif;
+}
+
+.wrapper {
+  width: 592px;
+  height: 104px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 400;
+
+  min-width: 36px;
+  min-height: 1px;
+}
+
+.title {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 32px;
+}
