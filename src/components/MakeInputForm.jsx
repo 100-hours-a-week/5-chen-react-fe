@@ -18,10 +18,13 @@ export function MakeInputForm(validateFunctions) {
 
   function validateAll() {
     console.log("VALIDATE ALL")
+    let ok = true;
     for (const [key, func] of Object.entries(validateFunctions)) {
       let error = func(values[key]);
+      if (error) ok = false;
       setErrorBag(bag => ({ ...bag, [key]: error }))
     }
+    return ok;
   }
 
   useEffect(() => {

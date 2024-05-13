@@ -1,13 +1,16 @@
 import styles from "css/LoginPage.module.css"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SmallLayout from "components/layouts/SmallLayout.jsx";
 import InputBox from "components/inputs/InputBox.jsx";
 import { MakeInputForm } from "components/MakeInputForm.jsx";
 import { emptyOrUndefined } from "util.js";
 import LongButton from "components/buttons/LongButton";
+import { useAuth } from "components/contexts/AuthContext";
 
 
 export function LoginPage() {
+  let { user, login } = useAuth();
+  let navigate = useNavigate();
   const validateFunctions = {
     email: (value) => {
       if (value === "" || value === undefined) {
@@ -26,6 +29,19 @@ export function LoginPage() {
   }
 
   const { values, errorBag, BlurHandlerFactory, validateAll } = MakeInputForm(validateFunctions)
+
+  const handleLogin = () => {
+    console.log("LOGIN")
+    let valid = validateAll();
+    if (valid) {
+      login({
+        id: 1,
+        nickname: "DummyUser",
+        profile_image: "/images/default.png"
+      });
+      navigate("/posts")
+    }
+  }
 
 
   return (
@@ -49,7 +65,7 @@ export function LoginPage() {
           BlurHandlerFactory={BlurHandlerFactory}
         />
       </form>
-      <LongButton onClick={validateAll}>로그인</LongButton>
+      <LongButton handleOnclick={handleLogin}>로그인</LongButton>
       <Link to="/signup">회원가입</Link>
     </SmallLayout>
   );
