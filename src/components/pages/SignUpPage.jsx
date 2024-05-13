@@ -2,7 +2,7 @@ import styles from "css/SignUpPage.module.css"
 import SmallLayout from "components/layouts/SmallLayout";
 import { MakeInputForm } from "components/MakeInputForm";
 import InputBox from "components/inputs/InputBox";
-import { emptyOrUndefined } from "util.js";
+import { emptyOrUndefined } from "components/util";
 import LongButton from "components/buttons/LongButton";
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";

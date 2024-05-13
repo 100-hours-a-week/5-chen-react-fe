@@ -13,7 +13,7 @@
     width: 100%;
 }
 
-.inputHere {
+.inputDefault {
     line-height: 25px;
     border-radius: 5px;
     border: black solid 1px;
@@ -21,7 +21,6 @@
 }
 
 .helperText {
-    margin-left: 5px;
     font-size: var(--font-size-12);
     color: red;
 }
@@ -30,6 +29,39 @@
 .profileImageInput {
     visibility: hidden;
     position: absolute;
+}
+
+.postLabel {
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-700);
+    padding-bottom: 16px;
+
+}
+
+.postTitleInput {
+    height: 64px;
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-700);
+}
+
+.postContentInput {
+    height: 276px;
+    font-size: var(--font-size-15);
+    padding-top: 15px;
+    resize: vertical;
+}
+
+.postInput {
+    line-height: 25px;
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.16);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+    background: transparent;
+}
+
+.postPadding {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .circleBox {

@@ -2,18 +2,15 @@ import styles from "css/InputBox.module.css"
 
 function InputBox({ subject, type, name, placeholderText, BlurHandlerFactory, errorBag }) {
   const handleBlur = BlurHandlerFactory(name);
+
   const SubjectLabel = <label htmlFor={name} className={styles.inputLabel}>
     {subject}
   </label>;
-
   const HelperText = <p className={styles.helperText}>
     {errorBag[name]}
   </p>;
 
-
   if (type === "profile_image") {
-    type = "file"
-
     return (
       <div className={styles.container}>
         {SubjectLabel}
@@ -27,7 +24,7 @@ function InputBox({ subject, type, name, placeholderText, BlurHandlerFactory, er
         </div>
         <input
           id={name}
-          type={type} name={name}
+          type="file" name={name}
           className={styles.profileImageInput}
           onChange={handleBlur}
         />
@@ -43,7 +40,7 @@ function InputBox({ subject, type, name, placeholderText, BlurHandlerFactory, er
         id={name}
         type={type} name={name}
         placeholder={placeholderText}
-        className={styles.inputHere}
+        className={styles.inputDefault}
         onBlur={handleBlur}
       />
       {HelperText}

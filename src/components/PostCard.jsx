@@ -1,7 +1,7 @@
 import styles from "css/PostCard.module.css"
 import ProfileImage from "components/ProfileImage";
 import { Link } from "react-router-dom";
-import { formatDateTime } from "util";
+import { formatDateTime } from "components/util";
 
 export function PostCard({ post }) {
   const title = post.title;

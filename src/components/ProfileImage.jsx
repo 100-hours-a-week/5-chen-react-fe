@@ -1,7 +1,7 @@
 import styles from "css/ProfileImage.module.css";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
-import { emptyOrUndefined } from "util";
+import { emptyOrUndefined } from "components/util";
 
 function ProfileImage({ className, hasDropDown = false, src = "/images/default.png" }) {
   if (emptyOrUndefined(className)) {

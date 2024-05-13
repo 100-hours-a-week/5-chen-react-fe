@@ -1,5 +1,5 @@
 import styles from "css/LongButton.module.css"
-import { emptyOrUndefined } from "util.js";
+import { emptyOrUndefined } from "components/util";
 
 function LongButton({ handleOnclick, className, children }) {
   if (emptyOrUndefined(className)) {

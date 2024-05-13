@@ -1,5 +1,5 @@
 import styles from "css/SmallLayout.module.css";
-import { emptyOrUndefined } from "util";
+import { emptyOrUndefined } from "components/util";
 
 function SmallLayout({ className, children }) {
   if (emptyOrUndefined(className)) {

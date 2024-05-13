@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import SmallLayout from "components/layouts/SmallLayout.jsx";
 import InputBox from "components/inputs/InputBox.jsx";
 import { MakeInputForm } from "components/MakeInputForm.jsx";
-import { emptyOrUndefined } from "util.js";
+import { emptyOrUndefined } from "components/util";
 import LongButton from "components/buttons/LongButton";
 import { useAuth } from "components/contexts/AuthContext";
 import { useMemo, useState } from "react";
