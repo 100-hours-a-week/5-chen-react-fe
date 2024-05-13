@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    row-gap: 5px;
+
+    margin: 0 0 15px 0;
+}
+
+.inputLabel {
+    font-size: var(--font-size-15);
+    width: 100%;
+}
+
+.inputHere {
+    line-height: 25px;
+    border-radius: 5px;
+    border: black solid 1px;
+    padding: 3px 10px 3px 10px;
+}
+
+.helperText {
+    margin-left: 5px;
+    font-size: var(--font-size-12);
+    color: red;
+}

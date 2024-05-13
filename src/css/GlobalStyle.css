@@ -1,0 +1,50 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style: none;
+}
+
+:root {
+    --bg-color: rgba(244, 245, 247, 1);
+    --deep-magenta: rgba(127, 106, 238, 1);
+    --profile-img-grey: rgba(217, 217, 217, 1);
+    --profile-img-white: #E9E9E9;
+    --magenta: #ACA0EB;
+    --z-dimm: 1233;
+    --z-modal: 1234;
+    --font-size-32: 32px;
+    --font-size-15: 15px;
+    --font-size-14: 14px;
+    --font-size-12: 12px;
+    --font-weight-700: 700;
+}
+
+@font-face {
+    /* 애플산돌고딕 폰트 적용 */
+    font-family: "SagacSagac";
+    src: url("/public/fonts/Human-beomseok.ttf") format("truetype");
+    font-weight: normal;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    margin: 0 0 0 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+}
+
+#root {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}

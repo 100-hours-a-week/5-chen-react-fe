@@ -1,0 +1,30 @@
+.shortButton {
+    color: white;
+
+    width: 138px;
+    height: 39px;
+    border-radius: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.longButton {
+    background-color: var(--magenta);
+
+    color: white;
+    border: none;
+    border-radius: 5px;
+
+    width: 392px;
+    height: 37px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.magenta {
+    background-color: var(--magenta);
+}

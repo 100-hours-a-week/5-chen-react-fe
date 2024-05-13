@@ -1,0 +1,13 @@
+.shortButton {
+    background-color: var(--magenta);
+
+    color: white;
+
+    width: 138px;
+    height: 39px;
+    border-radius: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

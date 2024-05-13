@@ -1,20 +1,22 @@
+import styles from "css/InputBox.module.css"
+
 function InputBox({ subject, type, name, placeholderText, BlurHandlerFactory, errorBag }) {
   const handleBlur = BlurHandlerFactory(name);
   return (
-    <>
-      <label htmlFor={name}>
+    <div className={styles.container}>
+      <label htmlFor={name} className={styles.inputLabel}>
         {subject}
       </label>
       <input
         type={type} name={name}
         placeholder={placeholderText}
-        className="default-input"
+        className={styles.inputHere}
         onBlur={handleBlur}
       />
-      <p className="helper-text">
+      <p className={styles.helperText}>
         {errorBag[name]}
       </p>
-    </>
+    </div>
   )
 
 }

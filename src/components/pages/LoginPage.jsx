@@ -4,6 +4,7 @@ import SmallLayout from "components/layouts/SmallLayout.jsx";
 import InputBox from "components/inputs/InputBox.jsx";
 import { MakeInputForm } from "components/MakeInputForm.jsx";
 import { emptyOrUndefined } from "util.js";
+import LongButton from "components/buttons/LongButton";
 
 
 export function LoginPage() {
@@ -29,7 +30,8 @@ export function LoginPage() {
 
   return (
     <SmallLayout>
-      <form>
+      <h1 className={styles.pageTitle}>로그인</h1>
+      <form className={styles.loginForm}>
         <InputBox
           type="text" name="email"
           subject="이메일"
@@ -47,7 +49,7 @@ export function LoginPage() {
           BlurHandlerFactory={BlurHandlerFactory}
         />
       </form>
-      <button onClick={validateAll}>로그인</button>
+      <LongButton onClick={validateAll}>로그인</LongButton>
       <Link to="/signup">회원가입</Link>
     </SmallLayout>
   );

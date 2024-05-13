@@ -1,7 +1,7 @@
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "components/Header";
-import {LoginPage} from "components/pages/LoginPage";
-import {AuthProvider} from "components/contexts/AuthContext";
+import { LoginPage } from "components/pages/LoginPage";
+import { AuthProvider } from "components/contexts/AuthContext";
 import GlobalStyle from "css/GlobalStyle";
 
 function App() {
