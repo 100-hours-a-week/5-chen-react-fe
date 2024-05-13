@@ -29,6 +29,7 @@ export function MakeInputForm(validateFunctions, values, setValues) {
 
   function BlurHandlerFactory(name) {
     return (event) => {
+      console.log("ON BLUR")
       const value = event.target.value;
       setVisited((prevState) => {
         return { ...prevState, [name]: true }

@@ -2,7 +2,7 @@ import styles from "css/SignUpPage.module.css"
 import SmallLayout from "components/layouts/SmallLayout";
 import { MakeInputForm } from "components/MakeInputForm";
 import InputBox from "components/inputs/InputBox";
-import { emptyOrUndefined } from "util";
+import { emptyOrUndefined } from "util.js";
 import LongButton from "components/buttons/LongButton";
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
@@ -13,6 +13,7 @@ function SignUpPage() {
   const validateFunctions = {
     profile_image: useMemo(() => {
       console.log("validate profile_image")
+      console.log(values.profile_image)
       if (emptyOrUndefined(values.profile_image)) {
         return "프로필 사진을 추가해주세요."
       }
@@ -53,7 +54,7 @@ function SignUpPage() {
     <h1 className={styles.pageTitle}>회원가입</h1>
     <form className={styles.signUpForm}>
       <InputBox
-        type="file" name="profile_image"
+        type="profile_image" name="profile_image"
         subject="프로필 사진"
         BlurHandlerFactory={BlurHandlerFactory}
         errorBag={errorBag}
