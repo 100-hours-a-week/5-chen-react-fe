@@ -6,29 +6,32 @@ import { MakeInputForm } from "components/MakeInputForm.jsx";
 import { emptyOrUndefined } from "util.js";
 import LongButton from "components/buttons/LongButton";
 import { useAuth } from "components/contexts/AuthContext";
+import { useMemo, useState } from "react";
 
 
 export function LoginPage() {
   let { user, login } = useAuth();
   let navigate = useNavigate();
+
+  const [values, setValues] = useState({})
   const validateFunctions = {
-    email: (value) => {
-      if (value === "" || value === undefined) {
+    email: useMemo(() => {
+      if (emptyOrUndefined(values.email)) {
         return "이메일을 입력해주세요.";
       } else {
         return null;
       }
-    },
-    password: (value) => {
-      if (emptyOrUndefined(value)) {
+    }, [values.email]),
+    password: useMemo(() => {
+      if (emptyOrUndefined(values.password)) {
         return "비밀번호를 입력해주세요.";
       } else {
         return null;
       }
-    }
+    }, [values.password])
   }
 
-  const { values, errorBag, BlurHandlerFactory, validateAll } = MakeInputForm(validateFunctions)
+  const { errorBag, BlurHandlerFactory, validateAll } = MakeInputForm(validateFunctions, values, setValues)
 
   const handleLogin = () => {
     let valid = validateAll();

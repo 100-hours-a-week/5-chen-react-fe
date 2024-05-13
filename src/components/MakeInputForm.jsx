@@ -1,17 +1,13 @@
 import { useEffect, useState } from "react";
 
-export function MakeInputForm(validateFunctions) {
+export function MakeInputForm(validateFunctions, values, setValues) {
   const [visited, setVisited] = useState({})
-
-  const [values, setValues] = useState({})
 
   const [errorBag, setErrorBag] = useState({})
 
   function validate() {
-    for (const [key, func] of Object.entries(validateFunctions)) {
+    for (const [key, error] of Object.entries(validateFunctions)) {
       if (visited[key] === undefined) continue;
-      console.log(`VALIDATE ${key}`)
-      let error = func(values[key]);
       setErrorBag(bag => ({ ...bag, [key]: error }))
     }
   }
@@ -19,8 +15,8 @@ export function MakeInputForm(validateFunctions) {
   function validateAll() {
     console.log("VALIDATE ALL")
     let ok = true;
-    for (const [key, func] of Object.entries(validateFunctions)) {
-      let error = func(values[key]);
+    for (const [key, error] of Object.entries(validateFunctions)) {
+      visited[key] = true;
       if (error) ok = false;
       setErrorBag(bag => ({ ...bag, [key]: error }))
     }
