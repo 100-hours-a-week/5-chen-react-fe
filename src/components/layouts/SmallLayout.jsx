@@ -1,8 +1,13 @@
 import styles from "css/SmallLayout.module.css";
+import { emptyOrUndefined } from "util";
 
-function SmallLayout({ children }) {
+function SmallLayout({ className, children }) {
+  if (emptyOrUndefined(className)) {
+    className = "";
+  }
+
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${className}`}>
       {children}
     </div>
   )

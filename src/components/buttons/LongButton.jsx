@@ -1,7 +1,11 @@
 import styles from "css/LongButton.module.css"
+import { emptyOrUndefined } from "util.js";
 
-function LongButton({ handleOnclick, children }) {
-  return <button onClick={handleOnclick} className={styles.longButton}>
+function LongButton({ handleOnclick, className, children }) {
+  if (emptyOrUndefined(className)) {
+    className = "";
+  }
+  return <button onClick={handleOnclick} className={`${styles.longButton} ${className}`}>
     {children}
   </button>
 }

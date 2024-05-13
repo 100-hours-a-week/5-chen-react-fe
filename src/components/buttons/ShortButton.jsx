@@ -1,7 +1,7 @@
 import styles from "css/ShortButton.module.css"
 
-function ShortButton({ onclick, children }) {
-  return <button onClick={onclick} className={styles.shortButton}>
+function ShortButton({ onclick, children, className }) {
+  return <button onClick={onclick} className={`${styles.shortButton} ${className}`}>
     {children}
   </button>
 }

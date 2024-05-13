@@ -1,8 +1,13 @@
 import styles from "css/BigLayout.module.css";
+import { emptyOrUndefined } from "util";
 
-function BigLayout({ children }) {
+function BigLayout({ className, children }) {
+  if (emptyOrUndefined(className)) {
+    className = "";
+  }
+
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${className}`}>
       {children}
     </div>
   )

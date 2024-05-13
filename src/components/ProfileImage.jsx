@@ -1,8 +1,12 @@
 import styles from "css/ProfileImage.module.css";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
+import { emptyOrUndefined } from "util";
 
-function ProfileImage({ hasDropDown = false, src = "/images/default.png" }) {
+function ProfileImage({ className, hasDropDown = false, src = "/images/default.png" }) {
+  if (emptyOrUndefined(className)) {
+    className = "";
+  }
   const [showDropDown, setShowDropDown] = useState(false)
   const imageElement = useRef();
   const dropdownElement = useRef();
@@ -35,7 +39,7 @@ function ProfileImage({ hasDropDown = false, src = "/images/default.png" }) {
     </div>)
 
   return (
-    <div className={styles.profile_img_container}>
+    <div className={`${styles.profile_img_container} ${className}`}>
       <img src={src}
            ref={imageElement}
            alt="profile"

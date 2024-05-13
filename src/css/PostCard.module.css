@@ -1,0 +1,61 @@
+.post {
+    width: 100%;
+    display: block;
+
+    background: rgba(204, 204, 204, 0.25);
+    border-radius: 16px;
+}
+
+.postTop {
+    border-bottom: 1px black solid;
+    padding-bottom: 24px;
+}
+
+.postTop, .postBottom {
+    padding-left: 27px;
+    padding-right: 27px;
+}
+
+.postBottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    font-weight: var(--font-weight-700);
+}
+
+.postTitle {
+    font-size: var(--font-size-24);
+    font-weight: var(--font-weight-700);
+
+    margin-bottom: 10px;
+    margin-top: 18px;
+}
+
+.postMetadata {
+    font-size: var(--font-size-14);
+    font-weight: var(--font-weight-400);
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.postCountsContainer {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+}
+
+.postCounts {
+    align-self: start;
+}
+
+.postCreatedAt {
+    align-self: end;
+}
+
+.profileImage {
+    margin-right: 10px;
+}
