@@ -31,16 +31,16 @@ export function LoginPage() {
   const { values, errorBag, BlurHandlerFactory, validateAll } = MakeInputForm(validateFunctions)
 
   const handleLogin = () => {
-    console.log("LOGIN")
     let valid = validateAll();
-    if (valid) {
-      login({
-        id: 1,
-        nickname: "DummyUser",
-        profile_image: "/images/default.png"
-      });
-      navigate("/posts")
+    if (!valid) {
+      return;
     }
+    login({
+      id: 1,
+      nickname: "DummyUser",
+      profile_image: "/images/default.png"
+    });
+    navigate("/posts")
   }
 
 
