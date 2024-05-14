@@ -1,10 +1,16 @@
 .container {
-  width: 592px;
-  height: 100%;
+    width: 592px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  row-gap: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 15px;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 915px;
+    display: flex;
+    justify-content: center;
 }

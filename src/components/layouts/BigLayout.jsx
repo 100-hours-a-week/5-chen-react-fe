@@ -7,8 +7,10 @@ function BigLayout({ className, children }) {
   }
 
   return (
-    <div className={`${styles.container} ${className}`}>
-      {children}
+    <div className={styles.wrapper}>
+      <div className={`${styles.container} ${className}`}>
+        {children}
+      </div>
     </div>
   )
 }

@@ -9,6 +9,8 @@ import { PostWritePage } from "components/pages/PostWritePage";
 import { PostEditPage } from "components/pages/PostEditPage";
 import UserEditPage from "components/pages/UserEditPage";
 import PasswordEditPage from "components/pages/PasswordEditPage";
+import PostDetailPage from "components/pages/PostDetailPage";
+import TestRootPage from "components/pages/TestRootPage";
 
 function App() {
   return (
@@ -18,10 +20,11 @@ function App() {
         <BrowserRouter>
           <Header/>
           <Routes>
-            <Route path="/" element={<LoginPage/>}/>
+            <Route path="/" element={<TestRootPage/>}/>
             <Route path="/login" element={<LoginPage/>}/>
             <Route path="/signup" element={<SignUpPage/>}/>
             <Route path="/posts" element={<PostListPage/>}/>
+            <Route path="/posts/detail" element={<PostDetailPage/>}/>
             <Route path="/posts/write" element={<PostWritePage/>}/>
             <Route path="/posts/edit" element={<PostEditPage/>}/>
             <Route path="/me/edit" element={<UserEditPage/>}/>

@@ -26,7 +26,7 @@ export const PostTitleInput = ({ subject, name, placeholderText, BlurHandlerFact
     placeholder={placeholderText}
     className={`${styles.postTitleInput} ${styles.postInput} ${styles.postPadding}`}
     onBlur={BlurHandlerFactory(name)}
-    value={value}
+    defaultValue={value}
   ></input>
 
   return maker(subject, name, errorBag, titleInput)
@@ -38,7 +38,7 @@ export const PostContentInput = ({ subject, name, placeholderText, BlurHandlerFa
     placeholder={placeholderText}
     className={`${styles.postContentInput} ${styles.postInput} ${styles.postPadding}`}
     onBlur={BlurHandlerFactory(name)}
-    value={value}
+    defaultValue={value}
   ></textarea>
 
   return maker(subject, name, errorBag, contentInput);

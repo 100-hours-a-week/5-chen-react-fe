@@ -18,12 +18,18 @@ export function PostListPage() {
       <h1>안녕하세요,</h1>
       <h1>아무말 대잔치 <span className={styles.titleBold}>게시판</span> 입니다.</h1>
     </div>
-    <ShortButton handleOnclick={() => navigate("/posts/write")} className={styles.postWriteButton}>게시글 작성</ShortButton>
+    <ShortButton handleOnClick={() => navigate("/posts/write")} className={styles.postWriteButton}>게시글 작성</ShortButton>
     <div className={styles.postsContainer}>
 
     </div>
     <PostCard post={post}/>
     <PostCard post={post}/>
+    <PostCard post={post}/>
+    <PostCard post={post}/><PostCard post={post}/><PostCard post={post}/>
+    <PostCard post={post}/><PostCard post={post}/><PostCard post={post}/><PostCard post={post}/><PostCard post={post}/><PostCard post={post}/>
+
+
+
   </BigLayout>
     ;
 }
