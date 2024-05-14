@@ -34,7 +34,7 @@ function ProfileImage({ className, hasDropDown = false, src = "/images/default.p
   const dropdown = (
     <div className={styles.profile_menu} ref={dropdownElement}>
       <Link to="/me/edit">회원정보수정</Link>
-      <Link to="/">비밀번호수정</Link>
+      <Link to="/me/edit-password">비밀번호수정</Link>
       <Link to="/">로그아웃</Link>
     </div>)
 
