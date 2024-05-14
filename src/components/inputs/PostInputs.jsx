@@ -19,24 +19,26 @@ let maker = (subject, name, errorBag, PostInput) => {
   )
 };
 
-export const PostTitleInput = ({ subject, name, placeholderText, BlurHandlerFactory, errorBag }) => {
+export const PostTitleInput = ({ subject, name, placeholderText, BlurHandlerFactory, errorBag, value }) => {
   const titleInput = <input
     id={name}
     type="text" name={name}
     placeholder={placeholderText}
     className={`${styles.postTitleInput} ${styles.postInput} ${styles.postPadding}`}
     onBlur={BlurHandlerFactory(name)}
-  />
+    value={value}
+  ></input>
 
   return maker(subject, name, errorBag, titleInput)
 }
 
-export const PostContentInput = ({ subject, name, placeholderText, BlurHandlerFactory, errorBag }) => {
+export const PostContentInput = ({ subject, name, placeholderText, BlurHandlerFactory, errorBag, value }) => {
   const contentInput = <textarea
     id={name} name={name}
     placeholder={placeholderText}
     className={`${styles.postContentInput} ${styles.postInput} ${styles.postPadding}`}
     onBlur={BlurHandlerFactory(name)}
+    value={value}
   ></textarea>
 
   return maker(subject, name, errorBag, contentInput);
