@@ -25,7 +25,7 @@ function InputBox({ subject, type, name, placeholderText, BlurHandlerFactory, er
         <input
           id={name}
           type="file" name={name}
-          className={styles.profileImageInput}
+          className={styles.hiddenImageInput}
           onChange={handleBlur}
         />
         {HelperText}

@@ -1,7 +1,11 @@
 import styles from "css/ShortButton.module.css"
+import { emptyOrUndefined } from "components/util";
 
-function ShortButton({ onClick, children, className }) {
-  return <button onClick={onClick} className={`${styles.shortButton} ${className}`}>
+function ShortButton({ handleOnClick, children, className }) {
+  if (emptyOrUndefined(className)) {
+    className = "";
+  }
+  return <button onClick={handleOnClick} className={`${styles.shortButton} ${className}`}>
     {children}
   </button>
 }

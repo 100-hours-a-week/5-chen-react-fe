@@ -7,6 +7,7 @@ import SignUpPage from "components/pages/SignUpPage";
 import { PostListPage } from "components/pages/PostListPage";
 import { PostWritePage } from "components/pages/PostWritePage";
 import { PostEditPage } from "components/pages/PostEditPage";
+import UserEditPage from "components/pages/UserEditPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/posts" element={<PostListPage/>}/>
             <Route path="/posts/write" element={<PostWritePage/>}/>
             <Route path="/posts/edit" element={<PostEditPage/>}/>
+            <Route path="/me/edit" element={<UserEditPage/>}/>
           </Routes>
         </BrowserRouter>
       </AuthProvider>

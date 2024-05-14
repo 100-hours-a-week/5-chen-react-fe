@@ -9,7 +9,8 @@
 }
 
 .inputLabel {
-    font-size: var(--font-size-15);
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-700);
     width: 100%;
 }
 
@@ -26,7 +27,7 @@
 }
 
 
-.profileImageInput {
+.hiddenImageInput {
     visibility: hidden;
     position: absolute;
 }
@@ -35,7 +36,6 @@
     font-size: var(--font-size-16);
     font-weight: var(--font-weight-700);
     padding-bottom: 16px;
-
 }
 
 .postTitleInput {
@@ -122,3 +122,21 @@
     border-left: 2px black solid;
     border-top: 2px black solid;
 }
+
+.userProfileChange {
+    font-size: var(--font-size-15);
+    font-weight: var(--font-weight-700);
+
+    width: 52px;
+    height: 27px;
+    border-radius: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.35);
+    color: white;
+    border: 1px solid white;
+}
+
