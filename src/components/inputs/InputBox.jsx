@@ -1,14 +1,14 @@
 import styles from "css/InputBox.module.css"
+import { useMemo } from "react";
 
-function InputBox({ subject, type, name, placeholderText, BlurHandlerFactory, errorBag }) {
+function InputBox({subject, type, name, placeholderText, BlurHandlerFactory, errorBag}) {
   const handleBlur = BlurHandlerFactory(name);
 
-  const SubjectLabel = <label htmlFor={name} className={styles.inputLabel}>
-    {subject}
-  </label>;
-  const HelperText = <p className={styles.helperText}>
-    {errorBag[name]}
-  </p>;
+  const SubjectLabel = useMemo(
+    () => <label htmlFor={name} className={styles.inputLabel}>{subject}</label>,
+    [subject, name]
+  );
+  const HelperText = useMemo(() => <p className={styles.helperText}>{errorBag[name]}</p>, [errorBag, name]);
 
   if (type === "profile_image") {
     return (

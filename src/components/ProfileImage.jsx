@@ -2,11 +2,13 @@ import styles from "css/ProfileImage.module.css";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { emptyOrUndefined } from "components/util";
+import { useAuth } from "./contexts/AuthContext";
 
-function ProfileImage({ className, hasDropDown = false, src = "/images/default.png" }) {
+function ProfileImage({className, hasDropDown = false, src = "/images/default.png"}) {
   if (emptyOrUndefined(className)) {
     className = "";
   }
+  const {logout} = useAuth();
   const [showDropDown, setShowDropDown] = useState(false)
   const imageElement = useRef();
   const dropdownElement = useRef();
@@ -35,7 +37,7 @@ function ProfileImage({ className, hasDropDown = false, src = "/images/default.p
     <div className={styles.profile_menu} ref={dropdownElement}>
       <Link to="/me/edit">회원정보수정</Link>
       <Link to="/me/edit-password">비밀번호수정</Link>
-      <Link to="/">로그아웃</Link>
+      <p onClick={logout}>로그아웃</p>
     </div>)
 
   return (

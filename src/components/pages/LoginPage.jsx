@@ -7,10 +7,11 @@ import { emptyOrUndefined } from "components/util";
 import LongButton from "components/buttons/LongButton";
 import { useAuth } from "components/contexts/AuthContext";
 import { useMemo, useState } from "react";
+import { fetchPOST } from "../FetchFromServer";
 
 
 export function LoginPage() {
-  let { user, login } = useAuth();
+  let { initAuth } = useAuth();
   let navigate = useNavigate();
 
   const [values, setValues] = useState({})
@@ -31,19 +32,21 @@ export function LoginPage() {
     }, [values.password])
   }
 
-  const { errorBag, BlurHandlerFactory, validateAll } = MakeInputForm(validateFunctions, values, setValues)
+  const { errorBag, appendError, BlurHandlerFactory, validateAll } = MakeInputForm(validateFunctions, values, setValues)
 
   const handleLogin = () => {
     let valid = validateAll();
     if (!valid) {
       return;
     }
-    login({
-      id: 1,
-      nickname: "DummyUser",
-      profile_image: "/images/default.png"
-    });
-    navigate("/posts")
+    fetchPOST("/login", { email: values.email, password: values.password })
+      .then(data => {
+        initAuth()
+        navigate("/posts")
+      }).catch(reason => {
+      console.warn("로그인 실패 : " + reason);
+      appendError("email", '이메일 또는 비밀번호가 다릅니다.')
+    })
   }
 
 

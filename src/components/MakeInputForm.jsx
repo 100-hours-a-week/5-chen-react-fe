@@ -8,8 +8,12 @@ export function MakeInputForm(validateFunctions, values, setValues) {
   function validate() {
     for (const [key, error] of Object.entries(validateFunctions)) {
       if (visited[key] === undefined) continue;
-      setErrorBag(bag => ({ ...bag, [key]: error }))
+      setErrorBag(bag => ({...bag, [key]: error}))
     }
+  }
+
+  function appendError(key, value) {
+    setErrorBag(bag => ({...bag, [key]: value}))
   }
 
   function validateAll() {
@@ -18,7 +22,7 @@ export function MakeInputForm(validateFunctions, values, setValues) {
     for (const [key, error] of Object.entries(validateFunctions)) {
       visited[key] = true;
       if (error) ok = false;
-      setErrorBag(bag => ({ ...bag, [key]: error }))
+      setErrorBag(bag => ({...bag, [key]: error}))
     }
     return ok;
   }
@@ -32,10 +36,10 @@ export function MakeInputForm(validateFunctions, values, setValues) {
       console.log("ON BLUR")
       const value = event.target.value;
       setVisited((prevState) => {
-        return { ...prevState, [name]: true }
+        return {...prevState, [name]: true}
       });
       setValues((prevState) => {
-        return { ...prevState, [name]: value }
+        return {...prevState, [name]: value}
       })
     }
   }
@@ -43,6 +47,7 @@ export function MakeInputForm(validateFunctions, values, setValues) {
   return {
     values: values,
     errorBag: errorBag,
+    appendError,
     BlurHandlerFactory: BlurHandlerFactory,
     validateAll: validateAll,
   }

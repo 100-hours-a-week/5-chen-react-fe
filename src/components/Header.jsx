@@ -2,10 +2,17 @@ import styles from "css/Header.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import ProfileImage from "components/ProfileImage";
 import { useAuth } from "./contexts/AuthContext";
+import { useMemo } from "react";
 
 function Header() {
   const { user } = useAuth();
   const navigate = useNavigate()
+  const profileImageMemo = useMemo(() => {
+    if (user) {
+      return <ProfileImage hasDropDown={true} src={user.profile_image}/>
+    }
+    return <></>
+  }, [user]);
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -13,7 +20,7 @@ function Header() {
         <Link to="/" className={styles.title}>
           아무말 대잔치
         </Link>
-        {user && <ProfileImage hasDropDown={true} src={user.profile_image}/>}
+        {profileImageMemo}
       </div>
     </div>
   );
